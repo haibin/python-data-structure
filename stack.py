@@ -9,8 +9,7 @@ class Stack:
         if len(self.array) == 0:
             return None
 
-        index = len(self.array) - 1
-        return self.array.pop(index)
+        return self.array.pop()
 
     def len(self):
         return len(self.array)
