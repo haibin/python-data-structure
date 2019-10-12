@@ -11,8 +11,9 @@ class Stack:
 
         return self.array.pop()
 
-    def len(self):
+    def __len__(self):
         return len(self.array)
+
 
 
 def is_valid(s):
@@ -35,7 +36,7 @@ def is_valid(s):
                 return False
             continue
     # check the stack
-    if stack.len() == 0:
+    if len(stack) == 0:
         return True
     return False
 
