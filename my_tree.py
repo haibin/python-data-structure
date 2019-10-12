@@ -45,6 +45,17 @@ class Tree:
         elif val == node.val:
             return
 
+    def traverse(self):
+        self._traverse(self.root)
+
+    def _traverse(self, node):
+        """Inorder traversal
+        """
+        if node is None:
+            return
+        self._traverse(node.left)
+        print(node.val)
+        self._traverse(node.right)
 
 
 
@@ -63,7 +74,7 @@ n_56 = Node(56, n_52, n_61)
 
 n_82 = Node(82)
 n_95 = Node(95)
-n_89 = Node(10, n_82, n_95)
+n_89 = Node(89, n_82, n_95)
 
 n_25 = Node(25, n_10, n_33)
 n_75 = Node(75, n_56, n_89)
@@ -71,5 +82,7 @@ n_75 = Node(75, n_56, n_89)
 root = Node(50, n_25, n_75)
 
 tree = Tree(root)
-print(tree.search(51))
-print(tree.search(75))
+# print(tree.search(51))
+# print(tree.search(75))
+
+tree.traverse()
