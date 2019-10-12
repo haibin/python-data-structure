@@ -24,6 +24,30 @@ class Tree:
 
         return self._search(node.right, val)
 
+    def insert(self, val):
+        if self.root is None:
+            self.root = Node(val)
+            return
+
+        self._insert(self.root, val)
+
+    def _insert(self, node, val):
+        if val > node.val:
+            if node.right is None:
+                node.right = Node(val)
+            else:
+                self._insert(node.right, val)
+        elif val < node.val:
+            if node.left is None:
+                node.left = Node(val)
+            else:
+                self._insert(node.left, val)
+        elif val == node.val:
+            return
+
+
+
+
 
 n_4 = Node(4)
 n_11 = Node(11)
